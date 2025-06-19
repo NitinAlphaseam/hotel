@@ -13,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      {/* Protected Routes */}
+      {/* Protected Routes to protect access */}
       <Route path="/dashboard" element={
         <PrivateRoute>
           <Dashboard />
