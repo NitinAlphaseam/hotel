@@ -3,7 +3,8 @@ import Dashboard from "./pages/Dashboard"
 import Billing from "./pages/Billing"
 import Login from "./pages/Login"
 import PrivateRoute from "./Components/PrivateRoute"
-import './services/mock.js'
+import ProductForm from "./Components/ProductForm"
+import ProductList from "./pages/ProductList"
 
 function App() {
 
@@ -24,6 +25,14 @@ function App() {
           <Billing />
         </PrivateRoute>
       } />
+
+      <Route path="/Product" element={
+        <PrivateRoute>
+          <ProductForm />
+          <ProductList />
+        </PrivateRoute>
+      } />
+
 
       <Route path="*" element={<Navigate to="/dashboard" />} />
     </Routes>

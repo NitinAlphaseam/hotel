@@ -7,15 +7,12 @@ const AuthProvider = ({ children }) => {
         token: localStorage.getItem('token') || null,
         user: JSON.stringify(localStorage.getItem('user')) || null,
 
-        //testing perpose
-        // token: 'dummy_token',
-        // user: { name: 'Demo User' },
-
     });
 
     // Login handler
     const login = (token, userData) => {
-        localStorage.setItem('token', token);
+        const dummyToken = 'dummy-token-123';
+        localStorage.setItem('token', dummyToken);
         localStorage.setItem('user', JSON.stringify(userData));
         setAuth({ token, user: userData });
 

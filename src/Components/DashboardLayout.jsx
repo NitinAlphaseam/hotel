@@ -19,6 +19,7 @@ const DashboardLayout = ({ children }) => {
                 <nav className="space-y-2">
                     <Link to="/dashboard" className="block hover:text-blue-300">Dashboard</Link>
                     <Link to="/billing" className="block hover:text-blue-300">Billing</Link>
+                    <Link to="/product" className="block hover:text-blue-300">Product</Link>
                 </nav>
             </aside>
 
