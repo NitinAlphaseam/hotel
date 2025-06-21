@@ -4,24 +4,23 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({
-        token: localStorage.getItem('token') || null,
-        user: JSON.stringify(localStorage.getItem('user')) || null,
+        token: localStorage.getItem('token') || sessionStorage.getItem('token'),
+        user: localStorage.getItem('user') || sessionStorage.getItem('user'),
 
     });
 
     // Login handler
     const login = (token, userData) => {
-        const dummyToken = 'dummy-token-123';
-        localStorage.setItem('token', dummyToken);
-        localStorage.setItem('user', JSON.stringify(userData));
+        localStorage.setItem('token', JSON.stringify(token)) || sessionStorage.setItem('token', JSON.stringify(token));
+        localStorage.setItem('user', JSON.stringify(userData)) || sessionStorage.setItem('user', JSON.stringify(userData));
         setAuth({ token, user: userData });
 
     };
 
     // Logout handler
     const logout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        localStorage.removeItem('token') || sessionStorage.removeItem('token');
+        localStorage.removeItem('user') || sessionStorage.removeItem('user');
         setAuth({ token: null, user: null });
     };
 

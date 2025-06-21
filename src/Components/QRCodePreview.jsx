@@ -25,7 +25,7 @@ const QRCodePreview = ({ itemNumber, price, size }) => {
 
     return (
         <div className="mt-4 text-center">
-            <h3 className="font-semibold mb-2">QR Code Preview</h3>
+            {/* <h3 className="font-semibold mb-2">QR Code Preview</h3> */}
             <div id="qr-code" className="inline-block border rounded p-2 bg-white">
                 <QRCode value={qrValue} />
             </div>

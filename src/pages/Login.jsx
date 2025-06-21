@@ -28,22 +28,13 @@ const Login = () => {
 
         try {
             const res = await api.post('/auth/login', formData);
-            login(res.data.token, res.data.user);
+            console.log(res)
+            login(res.data.access_token, res.data.email);
             navigate('/dashboard');
         } catch (err) {
             setSubmitError('Invalid email or password');
         }
 
-        // it is use for testing perpose
-        /* const dummyResponse = {
-             token: 'mocked_token_123',
-             user: { name: 'Test User', email: formData.email, password: formData.Pass },
-         };
- 
-         localStorage.setItem('token', dummyResponse.token);
-         localStorage.setItem('user', JSON.stringify(dummyResponse.user));
-         setAuth(dummyResponse);
-         navigate('/dashboard'); */
     };
 
     return (

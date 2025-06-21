@@ -3,8 +3,7 @@ import Dashboard from "./pages/Dashboard"
 import Billing from "./pages/Billing"
 import Login from "./pages/Login"
 import PrivateRoute from "./Components/PrivateRoute"
-import ProductForm from "./Components/ProductForm"
-import ProductList from "./pages/ProductList"
+import SaveProduct from "./hooks/SaveProduct"
 
 function App() {
 
@@ -28,8 +27,7 @@ function App() {
 
       <Route path="/Product" element={
         <PrivateRoute>
-          <ProductForm />
-          <ProductList />
+          <SaveProduct />
         </PrivateRoute>
       } />
 
